@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+import '../styles/portfolio.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Joachim Hanz N. Pastor — Developer Portfolio", 
+  description = "Joachim Hanz N. Pastor is a graduating BSIT student at Davao del Norte State College, passionate about software development and building innovative systems." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@1,2,3,4,5,6,7,8&f[]=satoshi@1,2,3,4,5,6,7&display=swap" rel="stylesheet"/>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
